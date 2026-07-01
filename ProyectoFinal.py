@@ -4,16 +4,24 @@ import funciones
 
 def imprime_menu() :
     funciones.linea_verde()
+    funciones.imprime_amarillo("\n\t\t\t\t--- MENU ---\n")
     funciones.linea_verde()
-    funciones.imprime_amarillo("\t\t\t1) Crear Tabla  \
-                               \n\t\t\t2) Agregar Datos  \
-                               \n\t\t\t3) Modificar Datos  \
-                               \n\t\t\t4) Ver Datos   \
-                               \n\t\t\t5) Eliminar Datos  \
-                               \n\t\t\t6) Salir\n")
+    funciones.imprime_amarillo(
+                             
+                            "\t\t\t1. Agregar producto\n"
+                            "\t\t\t2. Ver productos\n"
+                            "\t\t\t3. Buscar por nombre\n"
+                            "\t\t\t4. Eliminar producto\n"
+                            "\t\t\t5. Actualizar precio\n"
+                            "\t\t\t6. Buscar por categoria y precio\n"
+                            "\t\t\t7. Salir")
     funciones.linea_verde()
     funciones.linea_verde()
 
+
+    return input("Elegir opcion: ")
+
+    
 print("\n\n ")
 
 imprime_menu()
@@ -107,7 +115,7 @@ while(flag_programa_on == 0) :
 
                                                                                
 
-                            case "6": 
+                            case "7": 
                                     conexion.close() 
                                     flag_programa_on=1
 
