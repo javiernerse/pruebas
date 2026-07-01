@@ -4,7 +4,7 @@ import funciones
 
 def imprime_menu() :
     funciones.linea_verde()
-    funciones.imprime_amarillo("\n\t\t\t\t--- MENU ---\n")
+    funciones.imprime_amarillo("\t\t\t\t--- MENU ---\n")
     funciones.linea_verde()
     funciones.imprime_amarillo(
                              
