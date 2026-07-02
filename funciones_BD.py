@@ -113,7 +113,7 @@ def ver_productos():
         precio_prod = f"Precio: $ {producto[3]:.2f}"
         
         # Formateamos con anchos fijos (:<15 significa alineado a la izquierda, ocupando 15 caracteres)
-        linea_formateada = f"\t\t\t{id_prod:<8} {nombre_prod:<22} {categoria_prod:<22} {precio_prod}"
+        linea_formateada = f"\t{id_prod:<8} {nombre_prod:<22} {categoria_prod:<22} {precio_prod}"
         
         # Imprimimos según si el ID es par o impar
         if producto[0] % 2 == 0:

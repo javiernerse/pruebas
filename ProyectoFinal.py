@@ -5,7 +5,7 @@ import funciones_BD
 
 def imprime_menu() :
     imprime_color.linea_verde()
-    imprime_color.imprime_amarillo("\t\t\t\t--- MENU ---\n")
+    imprime_color.imprime_amarillo("\t\t\t\t--- MENU ---")
     imprime_color.linea_verde()
     imprime_color.imprime_amarillo(
                              
