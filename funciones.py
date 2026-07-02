@@ -1,3 +1,6 @@
+## MODULO PARA EL MANEJO DE COLORES EN LA TERMINAL
+
+
 from colorama import Fore,init,Back,Style
 init(autoreset=True)
 
