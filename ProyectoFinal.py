@@ -1,5 +1,6 @@
 import sqlite3
 import funciones
+import funciones_BD
 
 
 def imprime_menu() :
@@ -24,37 +25,22 @@ def imprime_menu() :
     
 print("\n\n ")
 
-imprime_menu()
+##imprime_menu()
+
 flag_programa_on = False
-conexion = sqlite3.connect("inventario.db")
-cursor = conexion.cursor()
+
 
 while(flag_programa_on == 0) :
 
-                        resp=input("\t\t\t")
+                        resp=imprime_menu()
 
                         match resp: 
-                            case "1": 
-                            ##nombre_tabla=input("Ingrese nombre tabla :")
-                                   ## conexion = sqlite3.connect("productos.db")
-                                    ##cursor = conexion.cursor()
-                             # Crear una tabla
-                                    cursor.execute('''CREATE TABLE IF NOT EXISTS inventario (
-                                                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                                    Nombre TEXT NOT NULL,
-                                                   Descripcion TEXT,
-                                                   Cantidad INT NOT NULL,
-
-                                                    precio REAL NOT NULL,
-                                                   Categoria TEXT
-                                                     )
-                                                    ''')
-                                    ##conexion.close()
-                                    funciones.imprime_verde("\t\t\tTABLA CREADA")
-                                    imprime_menu()
+                            case "1": ## AGREGAR DATOS
+                             print("Agregar datos")
 
 
-                            case "2" :
+                            case "2" :## VER PRODUCTOS
+                                    
                                     funciones.linea_verde()
                                     funciones.imprime_amarillo("\t\t\t\tINGRESO DE DATOS")
                                    ## conexion = sqlite3.connect("productos.db")
