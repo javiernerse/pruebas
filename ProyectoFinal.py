@@ -35,8 +35,15 @@ while(flag_programa_on == 0) :
 
                         match resp: 
                             case "1": ## AGREGAR DATOS
-                              imprime_color.linea_verde()
-                              funciones_BD.agregar_datos()
+                              flag_agregar_datos=False
+                              while (flag_agregar_datos == 0):
+                                            imprime_color.linea_verde()
+                                            funciones_BD.agregar_datos()
+                                            imprime_color.imprime_azul("Agrega otro dato ?(s/n) :")
+                                            flag_fin_agregar=input()
+                                            if (flag_fin_agregar == "n") or (flag_fin_agregar== "N"):
+                                                   flag_agregar_datos = True
+                                            else : flag_agregar_datos = False
 
 
                             case "2" :## VER PRODUCTOS
@@ -102,7 +109,7 @@ while(flag_programa_on == 0) :
                                                                                
 
                             case "7": 
-                                    conexion.close() 
+                                    #conexion.close() 
                                     flag_programa_on=1
 
                                     imprime_color.imprime_rojo("SALIENDO . . . .")
