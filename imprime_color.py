@@ -41,5 +41,5 @@ def imprime_verde(texto):
 def imprime_cyan(texto):
     ##from colorama import Fore,init
     ##init(autoreset=True)
-    print(Fore.CYAN + Back.LIGHTBLACK_EX + Style.BRIGHT + texto)    
+    print(Fore.CYAN + Back.LIGHTBLACK_EX + texto)    
  
