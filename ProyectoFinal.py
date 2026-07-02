@@ -57,9 +57,12 @@ while(flag_programa_on == 0) :
 
                             case "3": ##Buscar por nombre\n"         
                                     imprime_color.linea_verde()
-                                    imprime_color.imprime_amarillo("\n\n\n\n")
+                                    
+                                    funciones_BD.buscar_producto()
 
-                            case "4":## Ver datos
+
+                            case "4":## Eliminar producto
+                                        print(",,")
                                     
 
                                                                             

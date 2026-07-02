@@ -91,6 +91,8 @@ def agregar_datos():
 
 def ver_productos():
 
+
+
     cursor.execute("SELECT * FROM inventario")
 
     productos = cursor.fetchall()
@@ -125,4 +127,43 @@ def ver_productos():
         #    imprime_color.imprime_cyan(f"\t\t\tID: {producto[0]}\tNombre: {producto[1]}\tCategoria: {producto[2]}\tPrecio: $ {producto[3]:.2f}")   
 
     imprime_color.linea_verde()
-        
+
+
+
+
+
+
+
+def buscar_producto():
+
+    buscado = input("Buscar por nombre: ").strip()
+
+    if not buscado:
+
+        print("Debe ingresar un nombre")
+        return
+
+    cursor.execute(
+        """
+        SELECT *
+        FROM inventario
+        WHERE nombre LIKE ?
+        """,
+        ("%"+buscado + "%" ,)
+       
+    )#Recordemos que el like nos permite ingresar patrones de busqueda
+    #En este caso se ingresa el % (comodin)  para buscar variaciones que incluyan
+    #La palabra de buscada
+    #si usaramos el _, podriamos sustituir cracteres como c_sa, que puede ser
+    #cosa o casa
+
+    resultados = cursor.fetchall()
+
+    if len(resultados) == 0:
+
+        print("No se encontraron resultados")
+        return
+
+    for producto in resultados:  
+
+        print(f"\t\t\tID: {producto[0]}\tNombre: {producto[1]}\tCategoria: {producto[2]}\tPrecio: $ {producto[3]:.2f}") 
