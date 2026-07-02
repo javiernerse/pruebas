@@ -77,7 +77,7 @@ def agregar_datos():
 
     cursor.execute(
         """
-        INSERT INTO productos(nombre,categoria,precio)
+        INSERT INTO inventario(nombre,categoria,precio)
         VALUES(?,?,?)
         """,
         (nombre, categoria, precio)
