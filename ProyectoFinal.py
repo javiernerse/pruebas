@@ -1,13 +1,13 @@
 import sqlite3
-import funciones
+import imprime_color
 import funciones_BD
 
 
 def imprime_menu() :
-    funciones.linea_verde()
-    funciones.imprime_amarillo("\t\t\t\t--- MENU ---\n")
-    funciones.linea_verde()
-    funciones.imprime_amarillo(
+    imprime_color.linea_verde()
+    imprime_color.imprime_amarillo("\t\t\t\t--- MENU ---\n")
+    imprime_color.linea_verde()
+    imprime_color.imprime_amarillo(
                              
                             "\t\t\t1. Agregar producto\n"
                             "\t\t\t2. Ver productos\n"
@@ -16,8 +16,8 @@ def imprime_menu() :
                             "\t\t\t5. Actualizar precio\n"
                             "\t\t\t6. Buscar por categoria y precio\n"
                             "\t\t\t7. Salir")
-    funciones.linea_verde()
-    funciones.linea_verde()
+    imprime_color.linea_verde()
+    imprime_color.linea_verde()
 
 
     return input("Elegir opcion: ")
@@ -25,10 +25,9 @@ def imprime_menu() :
     
 print("\n\n ")
 
-##imprime_menu()
 
 flag_programa_on = False
-
+funciones_BD.crear_tabla()
 
 while(flag_programa_on == 0) :
 
@@ -36,18 +35,19 @@ while(flag_programa_on == 0) :
 
                         match resp: 
                             case "1": ## AGREGAR DATOS
-                             print("Agregar datos")
+                              imprime_color.linea_verde()
+                              funciones_BD.agregar_datos()
 
 
                             case "2" :## VER PRODUCTOS
                                     
-                                    funciones.linea_verde()
-                                    funciones.imprime_amarillo("\t\t\t\tINGRESO DE DATOS")
+                                    imprime_color.linea_verde()
+                                    imprime_color.imprime_amarillo("\t\t\t\tINGRESO DE DATOS")
                                    ## conexion = sqlite3.connect("productos.db")
                                     ##cursor=conexion.cursor()
                                     flag_insert=False
                                     while(flag_insert==0):
-                                        ##funciones.imprime_azul("\t\t\tIngrese Producto : ")
+                                        ##imprime_color.imprime_azul("\t\t\tIngrese Producto : ")
                                         aux_producto =input("\t\t\tIngrese Nombre del Producto : ")
                                         aux_descripcion=input("\t\t\tIngrese Descripcion :")
                                         aux_cantidad=int(input("\t\t\tIngrese cantidad :"))
@@ -72,11 +72,11 @@ while(flag_programa_on == 0) :
 
 
                             case "3": ##Modificar Datos            
-                                    funciones.linea_verde()
-                                    funciones.imprime_amarillo("\n\n\n\nModificar Datos")
+                                    imprime_color.linea_verde()
+                                    imprime_color.imprime_amarillo("\n\n\n\nModificar Datos")
 
                             case "4":## Ver datos
-                                    funciones.linea_verde()
+                                    imprime_color.linea_verde()
                                    ## conexion = sqlite3.connect("productos.db")
                                     ##cursor = conexion.cursor()
                                     # Recuperar todos los registros de la tabla productos
@@ -86,10 +86,10 @@ while(flag_programa_on == 0) :
                                     for producto in productos:
                                         if (producto[0] % 2 == 0):
                                         ##print(f"ID: {producto[0]}, Nombre: {producto[1]}, Precio:${producto[2]:.2f}")
-                                            funciones.imprime_amarillo(f"\t\t\tID: {producto[0]}, Nombre: {producto[1]}, Precio: ${producto[2]:.2f}")
+                                            imprime_color.imprime_amarillo(f"\t\t\tID: {producto[0]}, Nombre: {producto[1]}, Precio: ${producto[2]:.2f}")
                                         else:
-                                             funciones.imprime_cyan(f"\t\t\tID: {producto[0]}, Nombre: {producto[1]}, Precio: ${producto[2]:.2f}")   
-                                    funciones.linea_verde()
+                                             imprime_color.imprime_cyan(f"\t\t\tID: {producto[0]}, Nombre: {producto[1]}, Precio: ${producto[2]:.2f}")   
+                                    imprime_color.linea_verde()
 
                                     
                                     
@@ -105,4 +105,4 @@ while(flag_programa_on == 0) :
                                     conexion.close() 
                                     flag_programa_on=1
 
-                                    funciones.imprime_rojo("SALIENDO . . . .")
+                                    imprime_color.imprime_rojo("SALIENDO . . . .")
